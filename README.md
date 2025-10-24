@@ -25,4 +25,18 @@ Durante la implementación se resolvieron tres situaciones principales: un error
 --Imagenes de la App--
 
 <img width="1918" height="921" alt="imagen" src="https://github.com/user-attachments/assets/6cb44fd2-fa6e-4a50-b0ea-6a75b4c6caf3" />
+![Sin título](https://github.com/user-attachments/assets/7bba6ad2-4891-4cac-a633-718c76a49a53)
+![Sin título](https://github.com/user-attachments/assets/b7494f20-ce3c-4430-80e7-9a1b56fdea7e)
+![Sin título](https://github.com/user-attachments/assets/6bc28d17-e955-4c91-8446-b8ba14c1ef0d)
+![Sin título](https://github.com/user-attachments/assets/172142a4-8836-426a-a670-3d076c589596)
+![Sin título](https://github.com/user-attachments/assets/cf026c24-bcfc-4d91-b936-f410a7301ffe)
+![Sin título](https://github.com/user-attachments/assets/b214f4bd-a9b7-4771-af3a-f5361aeb3cb4)
+![Sin título](https://github.com/user-attachments/assets/fe5aafb5-cf02-48b6-a171-0fdaa9f3964f)
+
+
+
+
+
+
+
 
