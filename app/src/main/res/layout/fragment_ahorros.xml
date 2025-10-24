@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueLight">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+        <TextView
+            android:id="@+id/tv_ahorros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registrar_ahorro"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp"/>
+        <EditText
+            android:id="@+id/et_monto_ahorro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Monto (Q)"
+            android:inputType="numberDecimal"
+            android:autofillHints="number"
+            android:background="@color/white"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"/>
+        <EditText
+            android:id="@+id/et_desc_ahorro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/descripcion_opcional"
+            android:autofillHints="name"
+            android:inputType="text"
+            android:background="@color/white"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"/>
+        <Button
+            android:id="@+id/btn_registrar_ahorro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registrar_ahorro"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/white"
+            android:drawableStart="@drawable/ic_ahorros"
+            android:drawablePadding="8dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Historial de ahorros -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historial de ahorros"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp"/>
+        <LinearLayout
+            android:id="@+id/layout_historial_ahorros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+    </LinearLayout>
+</ScrollView>

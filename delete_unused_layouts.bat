@@ -1,0 +1,13 @@
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\activity_ahorros.xml"
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\activity_ayuda.xml"
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\activity_gastos.xml"
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\activity_login.xml"
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\activity_main.xml"
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\activity_register.xml"
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\fragment_ahorros.xml"
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\fragment_ayuda.xml"
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\fragment_chat_ia.xml"
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\fragment_gastos.xml"
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\fragment_inicio.xml"
+del /Q "c:\Users\Parat\AndroidStudioProjects\INTENTO_26\app\src\main\res\layout\fragment_metas.xml"
+

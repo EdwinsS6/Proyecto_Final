@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta azul tipo PayPal -->
+    <color name="colorPrimary">#003087</color>
+    <color name="colorPrimaryDark">#001C55</color>
+    <color name="colorAccent">#009CDE</color>
+    <color name="colorBlueLight">#E6F0FA</color>
+    <color name="colorBlueMedium">#0070BA</color>
+    <color name="colorBlueDark">#002D72</color>
+    <color name="colorTextPrimary">#222F3E</color>
+    <color name="colorTextSecondary">#8395A7</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+</resources>

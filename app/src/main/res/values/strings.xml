@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Monedix</string>
+    <string name="inicio">Inicio</string>
+    <string name="saldo_total">Saldo: Q0.00</string>
+    <string name="agregar_cuenta_nueva">Agregar cuenta nueva</string>
+    <string name="grafica_ingresos_gastos">Gráfica de ingresos y gastos</string>
+    <string name="grafica_ahorros_metas">Gráfica de ahorros y metas</string>
+    <string name="reporte_general">Reporte general</string>
+    <string name="sin_movimientos">Sin movimientos aún.</string>
+    <string name="registrar_gasto">Registrar Gasto</string>
+    <string name="monto">Monto</string>
+    <string name="moneda">Moneda (ej: MXN)</string>
+    <string name="descripcion_opcional">Descripción (opcional)</string>
+    <string name="historial_gastos">Historial de gastos</string>
+    <string name="registrar_ahorro">Registrar Ahorro</string>
+    <string name="historial_ahorros">Historial de ahorros</string>
+    <string name="crear_meta">Crear Meta</string>
+    <string name="monto_objetivo">Monto objetivo</string>
+    <string name="seleccionar_fecha_limite">Seleccionar fecha límite</string>
+    <string name="metas_creadas">Metas creadas</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="guia_rapida">Guía rápida de uso:\n1. Registra tus cuentas.\n2. Añade tus gastos y ahorros.\n3. Crea metas y sigue tu progreso.\n4. Consulta reportes y gráficas.</string>
+    <string name="faq">Preguntas frecuentes:\n- ¿Cómo registro un gasto?\n  Ve a la sección Gastos y completa el formulario.\n- ¿Cómo agrego una meta?\n  Ve a Metas y pulsa &quot;Crear meta&quot;.</string>
+    <string name="consejos">Consejos financieros:\n- Ahorra al menos el 10% de tus ingresos.\n- Revisa tus gastos semanalmente.\n- Define metas alcanzables.</string>
+    <string name="contactar_whatsapp">Contactar soporte por WhatsApp</string>
+    <string name="chat_ia">Chat IA</string>
+    <string name="enviar">Enviar</string>
+    <string name="escribe_mensaje">Escribe tu mensaje…</string>
+    <string name="metas">Metas</string>
+</resources>

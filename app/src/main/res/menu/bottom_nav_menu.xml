@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_inicio"
+        android:icon="@drawable/ic_home"
+        android:title="Inicio" />
+    <item
+        android:id="@+id/nav_gastos"
+        android:icon="@drawable/ic_gastos"
+        android:title="Gastos" />
+    <item
+        android:id="@+id/nav_ahorros"
+        android:icon="@drawable/ic_ahorros"
+        android:title="Ahorros" />
+    <item
+        android:id="@+id/nav_metas"
+        android:icon="@drawable/ic_metas"
+        android:title="Metas" />
+    <item
+        android:id="@+id/nav_chat"
+        android:icon="@drawable/ic_chat"
+        android:title="Chat IA" />
+    <item
+        android:id="@+id/nav_ayuda"
+        android:icon="@drawable/ic_ayuda"
+        android:title="Ayuda" />
+</menu>
+
