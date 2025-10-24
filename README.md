@@ -26,9 +26,13 @@ Durante la implementación se resolvieron tres situaciones principales: un error
 
 <img width="1918" height="921" alt="imagen" src="https://github.com/user-attachments/assets/6cb44fd2-fa6e-4a50-b0ea-6a75b4c6caf3" />
 
-<img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/8509a65e-3aa6-4cfa-9b29-89f03bed13d6" />---   <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/f958a55f-44c0-41bd-93f8-f052f657d089" />--- <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/df334018-81d1-442b-ac86-24242cfec1f5" />
+<img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/8509a65e-3aa6-4cfa-9b29-89f03bed13d6" />---   <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/f958a55f-44c0-41bd-93f8-f052f657d089" /> 
 
-<img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/9493edc2-7cc6-4622-b8a9-0050b53bf8af" />--- <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/49306577-e1a7-4c08-a1a3-b9f1ce55bb3b" />--- <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/49bb6005-8608-45b8-a63e-e2e81932594d" />
+<img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/9493edc2-7cc6-4622-b8a9-0050b53bf8af" />--- <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/df334018-81d1-442b-ac86-24242cfec1f5" />
+
+
+<img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/49306577-e1a7-4c08-a1a3-b9f1ce55bb3b" />--- 
+<img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/49bb6005-8608-45b8-a63e-e2e81932594d" />
 
 
 <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/089fc7e6-6513-4e59-967c-a3483859f886" />
