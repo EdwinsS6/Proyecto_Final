@@ -38,6 +38,51 @@ Durante la implementación se resolvieron tres situaciones principales: un error
 <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/089fc7e6-6513-4e59-967c-a3483859f886" />
 
 
+--Requisitos Técnicos--
+
+Requisitos del Sistema
+
+Sistema Operativo: Android 5.0 (API nivel 21) o superior
+
+IDE: Android Studio Narwhal 4 Feature Drop | 2025.1.4 o superior
+
+JDK: Java 8 o superior
+
+Gradle: 7.0 o superior
+
+Lenguajes de Programación
+
+Java: Lenguaje principal para la lógica de negocio
+
+Kotlin: Soporte adicional (según configuración del proyecto)
+
+XML: Definición de layouts y recursos de interfaz
+
+--Dependencias Principales--
+
+AndroidX Libraries
+
+androidx.fragment:fragment
+
+androidx.annotation:annotation
+
+Gráficas (MPAndroidChart)
+
+com.github.PhilJay:MPAndroidChart:v3.1.0
+
+Componentes utilizados:
+
+BarChart → Gráficas de barras para gastos
+
+PieChart → Gráficas circulares para ahorros y metas
+
+
+--Servicios de Red--
+
+Cliente HTTP para envío de reportes a través de n8n
+
+Requiere permiso de Internet en el archivo AndroidManifest.xml
+
 
 
 
