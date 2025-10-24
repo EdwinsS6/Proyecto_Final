@@ -1,0 +1,94 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "resumen_finanzas",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d46177a3-0a93-43d4-ab2c-d783603a2fa1",
+      "name": "Webhook",
+      "webhookId": "86438424-5f38-4631-aed0-bc2690c95246"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ========================================\n// CÓDIGO JAVASCRIPT PARA NODO CODE EN N8N\n// ========================================\n\n// Obtener datos del webhook - Los datos vienen en $json.body\nconst inputData = $json.body || $json;\n\n// Log completo para debugging\nconsole.log(\"=== DATOS RECIBIDOS DEL WEBHOOK ===\");\nconsole.log(JSON.stringify(inputData, null, 2));\n\n// Extraer email\nconst email = inputData.email || 'sin-email@ejemplo.com';\n\n// Extraer fecha y convertir a hora de Guatemala\nconst fechaOriginal = inputData.fechaGeneracion || new Date().toISOString();\nlet fechaGuatemala = fechaOriginal;\n\ntry {\n  // Parsear la fecha en formato \"2025-10-23 18:01:40\"\n  const partes = fechaOriginal.split(' ');\n  if (partes.length === 2) {\n    const [fecha, hora] = partes;\n    fechaGuatemala = `${fecha} ${hora} (Hora Guatemala)`;\n  }\n} catch (e) {\n  console.log(\"Error al procesar fecha:\", e);\n}\n\n// Extraer totales\nconst saldoTotal = Number(inputData.saldoTotal) || 0;\nconst totalGastos = Number(inputData.totalGastos) || 0;\nconst totalAhorros = Number(inputData.totalAhorros) || 0;\nconst totalMetasProgreso = Number(inputData.totalMetasProgreso) || 0;\nconst totalMetasObjetivo = Number(inputData.totalMetasObjetivo) || 0;\n\n// Extraer resumen\nconst resumen = inputData.resumen || {};\nconst numeroCuentas = Number(resumen.numeroCuentas) || 0;\nconst numeroGastos = Number(resumen.numeroGastos) || 0;\nconst numeroAhorros = Number(resumen.numeroAhorros) || 0;\nconst numeroMetas = Number(resumen.numeroMetas) || 0;\nconst balanceGeneral = Number(resumen.balanceGeneral) || 0;\n\n// Convertir objetos con índices a arrays\nfunction objetoAArray(obj) {\n  if (!obj) return [];\n  if (Array.isArray(obj)) return obj;\n  \n  // Si es un objeto con índices numéricos, convertirlo a array\n  const keys = Object.keys(obj).filter(k => !isNaN(k));\n  if (keys.length === 0) return [];\n  \n  return keys.sort((a, b) => Number(a) - Number(b)).map(k => obj[k]);\n}\n\n// Extraer arrays (convertir de objeto a array si es necesario)\nconst cuentas = objetoAArray(inputData.cuentas);\nconst gastos = objetoAArray(inputData.gastos);\nconst ahorros = objetoAArray(inputData.ahorros);\nconst metas = objetoAArray(inputData.metas);\n\nconsole.log(`Procesando: ${numeroCuentas} cuentas, ${numeroGastos} gastos, ${numeroAhorros} ahorros, ${numeroMetas} metas`);\nconsole.log(`Totales: Saldo=${saldoTotal}, Gastos=${totalGastos}, Ahorros=${totalAhorros}`);\nconsole.log(`Arrays: cuentas=${cuentas.length}, gastos=${gastos.length}, ahorros=${ahorros.length}, metas=${metas.length}`);\n\n// ========================================\n// FORMATEAR CUENTAS\n// ========================================\nlet cuentasTexto = '';\nif (cuentas.length > 0) {\n  cuentasTexto = cuentas.map(c => {\n    const nombre = c.nombre || 'Sin nombre';\n    const saldo = Number(c.saldo) || 0;\n    return `  💳 ${nombre}: Q${saldo.toFixed(2)}`;\n  }).join('\\n');\n} else {\n  cuentasTexto = '  ❌ No hay cuentas registradas';\n}\n\n// ========================================\n// FORMATEAR GASTOS\n// ========================================\nlet gastosTexto = '';\nif (gastos.length > 0) {\n  gastosTexto = gastos.map(g => {\n    const descripcion = g.descripcion || 'Sin descripción';\n    const monto = Number(g.monto) || 0;\n    const fecha = g.fecha || 'Sin fecha';\n    const cuenta = g.cuenta || 'Sin cuenta';\n    return `  💸 ${descripcion}\n     Monto: Q${monto.toFixed(2)}\n     Fecha: ${fecha}\n     Cuenta: ${cuenta}`;\n  }).join('\\n\\n');\n} else {\n  gastosTexto = '  ❌ No hay gastos registrados';\n}\n\n// ========================================\n// FORMATEAR AHORROS\n// ========================================\nlet ahorrosTexto = '';\nif (ahorros.length > 0) {\n  ahorrosTexto = ahorros.map(a => {\n    const descripcion = a.descripcion || 'Sin descripción';\n    const monto = Number(a.monto) || 0;\n    const fecha = a.fecha || 'Sin fecha';\n    const cuenta = a.cuenta || 'Sin cuenta';\n    return `  💰 ${descripcion}\n     Monto: Q${monto.toFixed(2)}\n     Fecha: ${fecha}\n     Cuenta: ${cuenta}`;\n  }).join('\\n\\n');\n} else {\n  ahorrosTexto = '  ❌ No hay ahorros registrados';\n}\n\n// ========================================\n// FORMATEAR METAS\n// ========================================\nlet metasTexto = '';\nif (metas.length > 0) {\n  metasTexto = metas.map(m => {\n    const nombre = m.nombre || 'Sin nombre';\n    const objetivo = Number(m.objetivo) || 1;\n    const progreso = Number(m.progreso) || 0;\n    const fechaLimite = m.fechaLimite || 'Sin fecha';\n    const porcentaje = Number(m.porcentaje) || ((progreso / objetivo) * 100);\n    \n    // Crear barra de progreso visual\n    const barrasLlenas = Math.min(Math.floor(porcentaje / 10), 10);\n    const barrasVacias = 10 - barrasLlenas;\n    const barraProgreso = '█'.repeat(barrasLlenas) + '░'.repeat(barrasVacias);\n    \n    return `  🎯 ${nombre}\n     Objetivo: Q${objetivo.toFixed(2)}\n     Progreso: Q${progreso.toFixed(2)}\n     Porcentaje: ${porcentaje.toFixed(1)}%\n     ${barraProgreso}\n     Fecha límite: ${fechaLimite}`;\n  }).join('\\n\\n');\n} else {\n  metasTexto = '  ❌ No hay metas registradas';\n}\n\n// ========================================\n// CREAR CUERPO DEL EMAIL\n// ========================================\nconst emailBody = `\n╔═══════════════════════════════════════════════════╗\n║       💰 REPORTE FINANCIERO DETALLADO 💰         ║\n╚═══════════════════════════════════════════════════╝\n\n📅 Fecha de generación: ${fechaGuatemala}\n📧 Enviado a: ${email}\n\n╔═══════════════════════════════════════════════════╗\n║                📊 RESUMEN GENERAL                 ║\n╚═══════════════════════════════════════════════════╝\n\n💵 Saldo Total:         Q${saldoTotal.toFixed(2)}\n💸 Total Gastos:        Q${totalGastos.toFixed(2)}\n💰 Total Ahorros:       Q${totalAhorros.toFixed(2)}\n🎯 Progreso en Metas:   Q${totalMetasProgreso.toFixed(2)} / Q${totalMetasObjetivo.toFixed(2)}\n📈 Balance General:     Q${balanceGeneral.toFixed(2)}\n\n╔═══════════════════════════════════════════════════╗\n║           🏦 CUENTAS (${numeroCuentas})                          ║\n╚═══════════════════════════════════════════════════╝\n\n${cuentasTexto}\n\n╔═══════════════════════════════════════════════════╗\n║           💸 GASTOS (${numeroGastos})                           ║\n╚═══════════════════════════════════════════════════╝\n\n${gastosTexto}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nTOTAL GASTADO: Q${totalGastos.toFixed(2)}\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n╔═══════════════════════════════════════════════════╗\n║           💵 AHORROS (${numeroAhorros})                         ║\n╚═══════════════════════════════════════════════════╝\n\n${ahorrosTexto}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nTOTAL AHORRADO: Q${totalAhorros.toFixed(2)}\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n╔═══════════════════════════════════════════════════╗\n║         🎯 METAS FINANCIERAS (${numeroMetas})                  ║\n╚═══════════════════════════════════════════════════╝\n\n${metasTexto}\n\n╔═══════════════════════════════════════════════════╗\n║                  📱 INFORMACIÓN                   ║\n╚═══════════════════════════════════════════════════╝\n\n📱 App: Gestión Financiera Personal\n🏦 Cuentas activas: ${numeroCuentas}\n💰 Saldo disponible: Q${saldoTotal.toFixed(2)}\n📊 Movimientos registrados: ${numeroGastos + numeroAhorros}\n🎯 Metas en progreso: ${numeroMetas}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n💡 Consejo financiero: \n   Mantén un registro constante de tus gastos para \n   alcanzar tus metas financieras más rápido.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nEste reporte fue generado automáticamente desde tu\naplicación de Gestión Financiera.\n\n`;\n\nconsole.log(\"=== EMAIL GENERADO EXITOSAMENTE ===\");\nconsole.log(\"Longitud del email:\", emailBody.length, \"caracteres\");\n\n// ========================================\n// RETORNAR RESULTADO\n// ========================================\nreturn {\n  email: email,\n  subject: `📊 Reporte Financiero - ${fechaOriginal.split(' ')[0]}`,\n  body: emailBody,\n  rawData: inputData\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "2478a95a-df1c-44b2-8ab9-fce1fe22fa85",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "={{ $json.subject }}",
+        "emailType": "text",
+        "message": "={{ $json.body }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        416,
+        0
+      ],
+      "id": "bb734f41-9580-4556-8598-bbcb0540fea7",
+      "name": "Send a message",
+      "webhookId": "c257543b-dad5-44af-a8f1-a942bd1af328",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "QCdtBfILzHHgnQ2H",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "31f29565-e4f4-4fb3-8b39-5c5cdaf436fe",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d16592bf4f81f77d2bd974666e5af309e63d83e2754019c0cc80a01d6756de16"
+  },
+  "id": "2Vift7B47XSaT9Si",
+  "tags": []
+}
