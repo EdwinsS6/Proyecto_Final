@@ -25,13 +25,14 @@ Durante la implementación se resolvieron tres situaciones principales: un error
 --Imagenes de la App--
 
 <img width="1918" height="921" alt="imagen" src="https://github.com/user-attachments/assets/6cb44fd2-fa6e-4a50-b0ea-6a75b4c6caf3" />
-![Sin título](https://github.com/user-attachments/assets/7bba6ad2-4891-4cac-a633-718c76a49a53)
-![Sin título](https://github.com/user-attachments/assets/b7494f20-ce3c-4430-80e7-9a1b56fdea7e)
-![Sin título](https://github.com/user-attachments/assets/6bc28d17-e955-4c91-8446-b8ba14c1ef0d)
-![Sin título](https://github.com/user-attachments/assets/172142a4-8836-426a-a670-3d076c589596)
-![Sin título](https://github.com/user-attachments/assets/cf026c24-bcfc-4d91-b936-f410a7301ffe)
-![Sin título](https://github.com/user-attachments/assets/b214f4bd-a9b7-4771-af3a-f5361aeb3cb4)
-![Sin título](https://github.com/user-attachments/assets/fe5aafb5-cf02-48b6-a171-0fdaa9f3964f)
+
+<img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/8509a65e-3aa6-4cfa-9b29-89f03bed13d6" />---   <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/f958a55f-44c0-41bd-93f8-f052f657d089" />--- <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/df334018-81d1-442b-ac86-24242cfec1f5" />
+
+<img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/9493edc2-7cc6-4622-b8a9-0050b53bf8af" />--- <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/49306577-e1a7-4c08-a1a3-b9f1ce55bb3b" />--- <img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/49bb6005-8608-45b8-a63e-e2e81932594d" />
+
+
+<img width="300" height="750" alt="imagen" src="https://github.com/user-attachments/assets/089fc7e6-6513-4e59-967c-a3483859f886" />
+
 
 
 
